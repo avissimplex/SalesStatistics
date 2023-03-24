@@ -69,7 +69,7 @@ public class StatsServiceTest {
         Assertions.assertEquals(expectedSumUnder, actualSumUnder);
     }
 
-    // 6. Количество месяцев, в которых продажи были выше среднего
+    // 6. Количество месяцев, в которых продажи были выше среднего/
     @Test
     public void shouldFindSumUpper() {
         StatsService service = new StatsService();

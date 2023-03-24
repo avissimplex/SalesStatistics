@@ -21,20 +21,22 @@ public class StatsService {
         average = sum / sales.length;
         return average;
     }
-//3. Номер месяца, в котором был пик продаж, то есть осуществлены продажи на максимальную сумму.
-public int maxSales(long[] sales) {
-    int maxMonth = 0;
-    int month = 0; // переменная для индекса рассматриваемого месяца в массиве
-    for (long sale : sales) {
-        // sales[maxMonth] - продажи в месяце maxMonth
-        // sale - продажи в рассматриваемом месяце
-        if (sales[maxMonth] <= sale) {
-            maxMonth = month;
+
+    //3. Номер месяца, в котором был пик продаж, то есть осуществлены продажи на максимальную сумму.
+    public int maxSales(long[] sales) {
+        int maxMonth = 0;
+        int month = 0; // переменная для индекса рассматриваемого месяца в массиве
+        for (long sale : sales) {
+            // sales[maxMonth] - продажи в месяце maxMonth
+            // sale - продажи в рассматриваемом месяце
+            if (sales[maxMonth] <= sale) {
+                maxMonth = month;
+            }
+            month = month + 1; // следующий рассматриваемый месяц имеет номер на 1 больше
         }
-        month = month + 1; // следующий рассматриваемый месяц имеет номер на 1 больше
+        return maxMonth + 1;
     }
-    return maxMonth + 1;
-}
+
     //4. Номер месяца, в котором был минимум продаж, то есть осуществлены продажи на минимальную сумму
     public int minSales(long[] sales) {
         int minMonth = 0;
@@ -51,7 +53,7 @@ public int maxSales(long[] sales) {
     }
 
     // 5. Количество месяцев, в которых продажи были ниже среднего
-    public int sumUnder (long[] sales) {
+    public int sumUnder(long[] sales) {
         int average = average(sales);
         int sumUnder = 0;
         for (long sale : sales) {
@@ -61,8 +63,9 @@ public int maxSales(long[] sales) {
         }
         return sumUnder;
     }
-    // 6. Количество месяцев, в которых продажи были выше среднего
-    public int sumUpper (long[] sales) {
+
+    // 6. Количество  месяцев, в которых продажи были выше среднего
+    public int sumUpper(long[] sales) {
         int average = average(sales);
         int sumUpper = 0;
         for (long sale : sales) {
